@@ -140,7 +140,7 @@ export default function AuthForm({ type }: AuthFormProps) {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder={isRegister ? 'อีเมล' : 'Email'}
-              className="w-full bg-white/90 border-2 border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#5a9f8f] focus:ring-2 focus:ring-[#5a9f8f] transition"
+              className="w-full bg-white border-3 border-[#d4af37] rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#d4af37] transition shadow-md"
               required
             />
           </div>
@@ -155,7 +155,7 @@ export default function AuthForm({ type }: AuthFormProps) {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 placeholder="ชื่อผู้ใช้"
-                className="w-full bg-white/90 border-2 border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#5a9f8f] focus:ring-2 focus:ring-[#5a9f8f] transition"
+                className="w-full bg-white border-3 border-[#d4af37] rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#d4af37] transition shadow-md"
                 required
               />
             </div>
@@ -171,7 +171,7 @@ export default function AuthForm({ type }: AuthFormProps) {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="รหัสผ่าน"
-                className="w-full bg-white/90 border-2 border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#5a9f8f] focus:ring-2 focus:ring-[#5a9f8f] transition"
+                className="w-full bg-white border-3 border-[#d4af37] rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#d4af37] transition shadow-md"
                 required
               />
             </div>
@@ -191,7 +191,7 @@ export default function AuthForm({ type }: AuthFormProps) {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="รหัสผ่าน"
-              className="w-full bg-white/90 border-2 border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#5a9f8f] focus:ring-2 focus:ring-[#5a9f8f] transition"
+              className="w-full bg-white border-3 border-[#d4af37] rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#d4af37] transition shadow-md"
               required
             />
             <p className="text-xs text-gray-600 mt-1">
@@ -208,7 +208,7 @@ export default function AuthForm({ type }: AuthFormProps) {
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               placeholder="ยืนยันรหัสผ่าน"
-              className="w-full bg-white/90 border-2 border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#5a9f8f] focus:ring-2 focus:ring-[#5a9f8f] transition"
+              className="w-full bg-white border-3 border-[#d4af37] rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#d4af37] transition shadow-md"
               required
             />
           </div>
