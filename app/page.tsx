@@ -54,8 +54,6 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Menu Categories Modal - Show for non-logged users */}
-      {!isLoggedIn && <MenuCategories />}
 
       {/* Hero Section - Show for logged-in users */}
       {isLoggedIn && (

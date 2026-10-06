@@ -4,6 +4,9 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import LotterySearch from '@/components/LotterySearch';
 import LotteryResults from '@/components/LotteryResults';
+import MenuCategories from '@/components/MenuCategories';
+import PromoBanner from '@/components/PromoBanner';
+import BottomNavigation from '@/components/BottomNavigation';
 
 interface User {
   id: string;
@@ -61,30 +64,36 @@ export default function DashboardPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#f5f1e8] to-[#ede5d8]">
-      {/* Navigation */}
-      <nav className="bg-gradient-to-r from-[#8B7500] to-[#654321] text-white shadow-lg">
+    <div className="min-h-screen bg-gradient-to-br from-[#f5f1e8] to-[#ede5d8] pb-24">
+      {/* Navigation Header */}
+      <nav className="bg-gradient-to-r from-[#8B7500] to-[#654321] text-white shadow-lg sticky top-0 z-40">
         <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
           <h1 className="text-3xl font-bold">🎰 ตรวจหวย</h1>
           <div className="space-x-4">
-            <span className="text-[#FFD700]">ยินดีต้อนรับ, {user.username}!</span>
+            <span className="text-[#FFD700] text-sm">ยินดี, {user.username}!</span>
             <button
               onClick={() => {
                 localStorage.removeItem('token');
                 router.push('/');
               }}
-              className="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg font-bold transition"
+              className="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg font-bold transition text-sm"
             >
-              ออกจากระบบ
+              ออก
             </button>
           </div>
         </div>
       </nav>
 
+      {/* Menu Categories - Horizontal */}
+      <MenuCategories />
+
+      {/* Promo Banner */}
+      <PromoBanner />
+
       {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-4 py-8">
+      <div className="max-w-6xl mx-auto px-4 py-6">
         {/* Tabs */}
-        <div className="flex gap-4 mb-8">
+        <div className="flex gap-4 mb-6">
           <button
             onClick={() => setActiveTab('search')}
             className={`px-6 py-3 rounded-lg font-bold text-lg transition shadow-lg ${
@@ -93,7 +102,7 @@ export default function DashboardPage() {
                 : 'bg-white text-[#8B7500] hover:bg-gray-50 border-2 border-[#FFD700]'
             }`}
           >
-            🔍 ค้นหาสลาก
+            🔍 ค้นหา
           </button>
           <button
             onClick={() => setActiveTab('results')}
@@ -103,7 +112,7 @@ export default function DashboardPage() {
                 : 'bg-white text-[#8B7500] hover:bg-gray-50 border-2 border-[#FFD700]'
             }`}
           >
-            📊 ผลล็อตเตอรี่
+            📊 ผล
           </button>
         </div>
 
@@ -111,6 +120,9 @@ export default function DashboardPage() {
         {activeTab === 'search' && <LotterySearch />}
         {activeTab === 'results' && <LotteryResults />}
       </div>
+
+      {/* Bottom Navigation */}
+      <BottomNavigation />
     </div>
   );
 }
