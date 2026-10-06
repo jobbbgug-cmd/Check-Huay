@@ -51,97 +51,110 @@ export default function LotteryResults({ page = 1 }: LotteryResultsProps) {
   }
 
   if (loading) {
-    return <div className="text-center py-8">Loading lottery results...</div>;
+    return (
+      <div className="text-center py-12">
+        <div className="text-gray-600">กำลังโหลดผลลัพธ์...</div>
+      </div>
+    );
   }
 
   if (error) {
     return (
-      <div className="p-4 bg-red-100 border border-red-400 text-red-700 rounded">
+      <div className="p-6 bg-red-100 border-l-4 border-red-600 text-red-700 rounded-lg">
         {error}
       </div>
     );
   }
 
   if (results.length === 0) {
-    return <div className="text-center py-8">No lottery results found</div>;
+    return <div className="text-center py-12 text-gray-600">ไม่พบผลลัพธ์</div>;
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       {results.map((result) => (
         <div
           key={result._id}
-          className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-600"
+          className="card-gold"
         >
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-4">
-            <div>
-              <p className="text-gray-600 text-sm">Draw Date</p>
-              <p className="text-lg font-semibold">{result.drawDate}</p>
-            </div>
-            <div>
-              <p className="text-gray-600 text-sm">Draw Number</p>
-              <p className="text-lg font-semibold">{result.drawNumber}</p>
+          <div className="mb-6">
+            <div className="flex justify-between items-center mb-4">
+              <div>
+                <p className="text-sm text-gray-600">งวดประจำวันที่</p>
+                <p className="text-xl font-bold text-gray-800">{result.drawDate}</p>
+              </div>
+              <div className="text-right">
+                <p className="text-sm text-gray-600">งวดที่</p>
+                <p className="text-xl font-bold text-gray-800">{result.drawNumber}</p>
+              </div>
             </div>
           </div>
 
-          <div className="space-y-3">
+          <div className="space-y-4">
             <PrizeSection
-              title="Prize 1"
+              title="รางวัลที่ 1"
               numbers={[result.firstPrize]}
               color="gold"
+              badge="1"
             />
             <PrizeSection
-              title="Prize 2"
+              title="รางวัลที่ 2"
               numbers={result.secondPrize}
               color="silver"
+              badge="2"
             />
             <PrizeSection
-              title="Prize 3"
+              title="รางวัลที่ 3"
               numbers={result.thirdPrize}
-              color="orange"
+              color="bronze"
+              badge="3"
             />
             <PrizeSection
-              title="Prize 4"
+              title="รางวัลที่ 4"
               numbers={result.fourthPrize}
               color="blue"
+              badge="4"
             />
             <PrizeSection
-              title="Prize 5"
+              title="รางวัลที่ 5"
               numbers={result.fifthPrize}
               color="purple"
+              badge="5"
             />
             <PrizeSection
-              title="Near Prize 1"
+              title="รางวัลเข้าใกล้ที่ 1"
               numbers={result.nearFirstPrize}
-              color="gray"
+              color="near"
+              badge="เข้า"
             />
             <PrizeSection
-              title="Running Number"
+              title="เลขท้าย 2 ตัว"
               numbers={result.runningNumber}
-              color="green"
+              color="running"
+              badge="ท้าย"
             />
           </div>
         </div>
       ))}
 
       {totalPages > 1 && (
-        <div className="flex justify-center gap-2 mt-8">
+        <div className="flex justify-center gap-3 mt-8">
           <button
             onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
             disabled={currentPage === 1}
-            className="px-4 py-2 bg-gray-300 hover:bg-gray-400 disabled:bg-gray-200 rounded-lg"
+            className="px-5 py-3 bg-gradient-to-b from-[#d4af37] to-[#b8941f] hover:from-[#e8c547] hover:to-[#c4b82e] disabled:from-gray-400 disabled:to-gray-500 text-[#2d5f4f] disabled:text-gray-600 font-bold rounded-lg transition shadow-md"
           >
-            Previous
+            ← ก่อนหน้า
           </button>
-          <span className="px-4 py-2">
-            Page {currentPage} of {totalPages}
+          <span className="px-4 py-3 font-bold text-gray-700">
+            หน้า {currentPage} / {totalPages}
           </span>
           <button
             onClick={() => setCurrentPage(Math.min(totalPages, currentPage + 1))}
             disabled={currentPage === totalPages}
-            className="px-4 py-2 bg-gray-300 hover:bg-gray-400 disabled:bg-gray-200 rounded-lg"
+            className="px-5 py-3 bg-gradient-to-b from-[#d4af37] to-[#b8941f] hover:from-[#e8c547] hover:to-[#c4b82e] disabled:from-gray-400 disabled:to-gray-500 text-[#2d5f4f] disabled:text-gray-600 font-bold rounded-lg transition shadow-md"
           >
-            Next
+            ถัดไป →
           </button>
         </div>
       )}
@@ -153,29 +166,46 @@ function PrizeSection({
   title,
   numbers,
   color,
+  badge,
 }: {
   title: string;
   numbers: string[];
   color: string;
+  badge: string;
 }) {
   const colorClasses: Record<string, string> = {
-    gold: 'bg-yellow-100 text-yellow-900',
-    silver: 'bg-gray-100 text-gray-900',
-    orange: 'bg-orange-100 text-orange-900',
-    blue: 'bg-blue-100 text-blue-900',
-    purple: 'bg-purple-100 text-purple-900',
-    gray: 'bg-gray-200 text-gray-800',
-    green: 'bg-green-100 text-green-900',
+    gold: 'bg-gradient-to-r from-yellow-200 to-yellow-100 text-gray-900',
+    silver: 'bg-gradient-to-r from-gray-200 to-gray-100 text-gray-900',
+    bronze: 'bg-gradient-to-r from-orange-200 to-orange-100 text-gray-900',
+    blue: 'bg-gradient-to-r from-blue-200 to-blue-100 text-gray-900',
+    purple: 'bg-gradient-to-r from-purple-200 to-purple-100 text-gray-900',
+    near: 'bg-gradient-to-r from-green-200 to-green-100 text-gray-900',
+    running: 'bg-gradient-to-r from-emerald-200 to-emerald-100 text-gray-900',
+  };
+
+  const badgeClasses: Record<string, string> = {
+    '1': 'bg-gradient-to-b from-yellow-400 to-yellow-600 text-white',
+    '2': 'bg-gradient-to-b from-gray-400 to-gray-600 text-white',
+    '3': 'bg-gradient-to-b from-orange-400 to-orange-600 text-white',
+    '4': 'bg-blue-500 text-white',
+    '5': 'bg-purple-500 text-white',
+    เข้า: 'bg-green-500 text-white',
+    ท้าย: 'bg-emerald-500 text-white',
   };
 
   return (
-    <div>
-      <p className="text-sm font-medium text-gray-700 mb-2">{title}</p>
+    <div className="bg-white rounded-lg p-4 border-2 border-gray-200">
+      <div className="flex items-center gap-3 mb-3">
+        <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm ${badgeClasses[badge]}`}>
+          {badge}
+        </div>
+        <p className="text-sm font-bold text-gray-700">{title}</p>
+      </div>
       <div className="flex flex-wrap gap-2">
         {numbers.map((num, idx) => (
           <span
             key={idx}
-            className={`px-3 py-1 rounded-full font-mono font-semibold text-sm ${colorClasses[color]}`}
+            className={`px-4 py-2 rounded-full font-bold font-mono text-center min-w-fit ${colorClasses[color]}`}
           >
             {num}
           </span>

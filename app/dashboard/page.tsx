@@ -61,21 +61,21 @@ export default function DashboardPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gradient-to-br from-[#f5f1e8] to-[#ede5d8]">
       {/* Navigation */}
-      <nav className="bg-blue-900 text-white shadow-lg">
+      <nav className="bg-gradient-to-r from-[#2d5f4f] to-[#1a3a2e] text-white shadow-lg">
         <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold">🎰 Thai Lottery Checker</h1>
+          <h1 className="text-3xl font-bold">🎰 ตรวจหวย</h1>
           <div className="space-x-4">
-            <span className="text-blue-200">Welcome, {user.username}!</span>
+            <span className="text-[#d4af37]">ยินดีต้อนรับ, {user.username}!</span>
             <button
               onClick={() => {
                 localStorage.removeItem('token');
                 router.push('/');
               }}
-              className="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg"
+              className="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg font-bold transition"
             >
-              Logout
+              ออกจากระบบ
             </button>
           </div>
         </div>
@@ -87,23 +87,23 @@ export default function DashboardPage() {
         <div className="flex gap-4 mb-8">
           <button
             onClick={() => setActiveTab('search')}
-            className={`px-6 py-3 rounded-lg font-medium transition ${
+            className={`px-6 py-3 rounded-lg font-bold text-lg transition shadow-lg ${
               activeTab === 'search'
-                ? 'bg-blue-600 text-white shadow-lg'
-                : 'bg-white text-gray-700 hover:bg-gray-50'
+                ? 'bg-gradient-to-b from-[#5a9f8f] to-[#2d5f4f] text-white'
+                : 'bg-white text-[#2d5f4f] hover:bg-gray-50 border-2 border-[#d4af37]'
             }`}
           >
-            🔍 Search Ticket
+            🔍 ค้นหาสลาก
           </button>
           <button
             onClick={() => setActiveTab('results')}
-            className={`px-6 py-3 rounded-lg font-medium transition ${
+            className={`px-6 py-3 rounded-lg font-bold text-lg transition shadow-lg ${
               activeTab === 'results'
-                ? 'bg-blue-600 text-white shadow-lg'
-                : 'bg-white text-gray-700 hover:bg-gray-50'
+                ? 'bg-gradient-to-b from-[#5a9f8f] to-[#2d5f4f] text-white'
+                : 'bg-white text-[#2d5f4f] hover:bg-gray-50 border-2 border-[#d4af37]'
             }`}
           >
-            📊 Past Results
+            📊 ผลล็อตเตอรี่
           </button>
         </div>
 

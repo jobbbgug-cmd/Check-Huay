@@ -4,13 +4,15 @@ import AuthForm from '@/components/AuthForm';
 
 export default function RegisterPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center p-4">
-      <div className="w-full max-w-md bg-white rounded-lg shadow-xl p-8">
-        <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">
-          🎰 Register
-        </h1>
+    <div className="min-h-screen bg-gradient-to-br from-[#2d5f4f] to-[#1a3a2e] flex items-center justify-center p-4">
+      <div className="w-full max-w-md bg-gradient-to-b from-[#5a9f8f] to-[#2d5f4f] rounded-3xl shadow-2xl p-8 text-white">
+        <h1 className="text-4xl font-bold text-center mb-2">🎰</h1>
+        <h2 className="text-3xl font-bold text-center text-[#d4af37] mb-8">
+          สมัครสมาชิก
+        </h2>
         <AuthForm type="register" />
       </div>
     </div>
   );
 }
+
