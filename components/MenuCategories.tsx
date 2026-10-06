@@ -28,18 +28,6 @@ const categories: Category[] = [
     icon: '🎰',
     href: '/lottery',
   },
-  {
-    id: 'sports',
-    name: 'หวยยุด',
-    icon: '⚽',
-    href: '/sports',
-  },
-  {
-    id: 'casino',
-    name: 'คาสิโน',
-    icon: '🎲',
-    href: '/casino',
-  },
 ];
 
 export default function MenuCategories() {
