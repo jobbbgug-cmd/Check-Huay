@@ -32,7 +32,7 @@ const categories: Category[] = [
 
 export default function MenuCategories() {
   return (
-    <div className="w-full bg-gradient-to-r from-[#8B7500] to-[#654321] py-4 px-4 border-4 border-red-600">
+    <div className="w-full bg-gradient-to-r from-[#8B7500] to-[#654321] py-4 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Horizontal menu - Full width with equal spacing */}
         <div className="grid grid-cols-3 gap-3">
