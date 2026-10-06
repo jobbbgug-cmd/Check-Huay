@@ -75,7 +75,7 @@ export default function AuthForm({ type }: AuthFormProps) {
           className={`flex-1 py-3 px-4 font-bold rounded-lg transition ${
             step === 1
               ? 'bg-[#5a9f8f] text-white'
-              : 'bg-gray-400 text-gray-700 hover:bg-gray-300'
+              : 'bg-gray-400 text-white hover:bg-gray-300'
           }`}
         >
           {isRegister ? 'สมัครสมาชิก' : 'เข้าสู่ระบบ'}
@@ -87,7 +87,7 @@ export default function AuthForm({ type }: AuthFormProps) {
             className={`flex-1 py-3 px-4 font-bold rounded-lg transition ${
               step === 2
                 ? 'bg-[#5a9f8f] text-white'
-                : 'bg-gray-400 text-gray-700 hover:bg-gray-300'
+                : 'bg-gray-400 text-white hover:bg-gray-300'
             }`}
           >
             ตั้งรหัสผ่าน
@@ -132,7 +132,7 @@ export default function AuthForm({ type }: AuthFormProps) {
       {step === 1 && (
         <div className="space-y-4">
           <div>
-            <label className="block text-sm font-bold text-gray-700 mb-2">
+            <label className="block text-sm font-bold text-white mb-2">
               {isRegister ? 'อีเมล' : 'Email'}
             </label>
             <input
@@ -147,7 +147,7 @@ export default function AuthForm({ type }: AuthFormProps) {
 
           {isRegister && (
             <div>
-              <label className="block text-sm font-bold text-gray-700 mb-2">
+              <label className="block text-sm font-bold text-white mb-2">
                 ชื่อผู้ใช้
               </label>
               <input
@@ -163,7 +163,7 @@ export default function AuthForm({ type }: AuthFormProps) {
 
           {!isRegister && (
             <div>
-              <label className="block text-sm font-bold text-gray-700 mb-2">
+              <label className="block text-sm font-bold text-white mb-2">
                 รหัสผ่าน
               </label>
               <input
@@ -183,7 +183,7 @@ export default function AuthForm({ type }: AuthFormProps) {
       {isRegister && step === 2 && (
         <div className="space-y-4">
           <div>
-            <label className="block text-sm font-bold text-gray-700 mb-2">
+            <label className="block text-sm font-bold text-white mb-2">
               รหัสผ่าน
             </label>
             <input
@@ -200,7 +200,7 @@ export default function AuthForm({ type }: AuthFormProps) {
           </div>
 
           <div>
-            <label className="block text-sm font-bold text-gray-700 mb-2">
+            <label className="block text-sm font-bold text-white mb-2">
               ยืนยันรหัสผ่าน
             </label>
             <input
