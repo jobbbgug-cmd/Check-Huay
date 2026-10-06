@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import MenuCategories from '@/components/MenuCategories';
 
 export default function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -88,6 +89,9 @@ export default function Home() {
           </div>
         )}
       </div>
+
+      {/* Menu Categories */}
+      <MenuCategories />
 
       {/* Features */}
       <div className="bg-white bg-opacity-95 py-20 mt-20">
