@@ -63,11 +63,11 @@ export default function DashboardPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#f5f1e8] to-[#ede5d8]">
       {/* Navigation */}
-      <nav className="bg-gradient-to-r from-[#2d5f4f] to-[#1a3a2e] text-white shadow-lg">
+      <nav className="bg-gradient-to-r from-[#8B7500] to-[#654321] text-white shadow-lg">
         <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
           <h1 className="text-3xl font-bold">🎰 ตรวจหวย</h1>
           <div className="space-x-4">
-            <span className="text-[#d4af37]">ยินดีต้อนรับ, {user.username}!</span>
+            <span className="text-[#FFD700]">ยินดีต้อนรับ, {user.username}!</span>
             <button
               onClick={() => {
                 localStorage.removeItem('token');
@@ -89,8 +89,8 @@ export default function DashboardPage() {
             onClick={() => setActiveTab('search')}
             className={`px-6 py-3 rounded-lg font-bold text-lg transition shadow-lg ${
               activeTab === 'search'
-                ? 'bg-gradient-to-b from-[#5a9f8f] to-[#2d5f4f] text-white'
-                : 'bg-white text-[#2d5f4f] hover:bg-gray-50 border-2 border-[#d4af37]'
+                ? 'bg-gradient-to-b from-[#DAA520] to-[#8B7500] text-white'
+                : 'bg-white text-[#8B7500] hover:bg-gray-50 border-2 border-[#FFD700]'
             }`}
           >
             🔍 ค้นหาสลาก
@@ -99,8 +99,8 @@ export default function DashboardPage() {
             onClick={() => setActiveTab('results')}
             className={`px-6 py-3 rounded-lg font-bold text-lg transition shadow-lg ${
               activeTab === 'results'
-                ? 'bg-gradient-to-b from-[#5a9f8f] to-[#2d5f4f] text-white'
-                : 'bg-white text-[#2d5f4f] hover:bg-gray-50 border-2 border-[#d4af37]'
+                ? 'bg-gradient-to-b from-[#DAA520] to-[#8B7500] text-white'
+                : 'bg-white text-[#8B7500] hover:bg-gray-50 border-2 border-[#FFD700]'
             }`}
           >
             📊 ผลล็อตเตอรี่

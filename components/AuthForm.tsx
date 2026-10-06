@@ -74,7 +74,7 @@ export default function AuthForm({ type }: AuthFormProps) {
           onClick={() => setStep(1)}
           className={`flex-1 py-3 px-4 font-bold rounded-lg transition ${
             step === 1
-              ? 'bg-[#5a9f8f] text-white'
+              ? 'bg-[#DAA520] text-white'
               : 'bg-gray-400 text-white hover:bg-gray-300'
           }`}
         >
@@ -86,7 +86,7 @@ export default function AuthForm({ type }: AuthFormProps) {
             onClick={() => setStep(2)}
             className={`flex-1 py-3 px-4 font-bold rounded-lg transition ${
               step === 2
-                ? 'bg-[#5a9f8f] text-white'
+                ? 'bg-[#DAA520] text-white'
                 : 'bg-gray-400 text-white hover:bg-gray-300'
             }`}
           >
@@ -103,7 +103,7 @@ export default function AuthForm({ type }: AuthFormProps) {
               <div
                 className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg transition ${
                   s === step
-                    ? 'bg-[#5a9f8f] text-white'
+                    ? 'bg-[#DAA520] text-white'
                     : 'bg-gray-300 text-gray-500'
                 }`}
               >
@@ -112,7 +112,7 @@ export default function AuthForm({ type }: AuthFormProps) {
               {s < 3 && (
                 <div
                   className={`h-1 w-12 mx-2 transition ${
-                    s < step ? 'bg-[#5a9f8f]' : 'bg-gray-300'
+                    s < step ? 'bg-[#DAA520]' : 'bg-gray-300'
                   }`}
                 ></div>
               )}
@@ -140,7 +140,7 @@ export default function AuthForm({ type }: AuthFormProps) {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder={isRegister ? 'อีเมล' : 'Email'}
-              className="w-full bg-white border-3 border-[#d4af37] rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#d4af37] transition shadow-md"
+              className="w-full bg-white border-3 border-[#FFD700] rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#FFD700] transition shadow-md"
               required
             />
           </div>
@@ -155,7 +155,7 @@ export default function AuthForm({ type }: AuthFormProps) {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 placeholder="ชื่อผู้ใช้"
-                className="w-full bg-white border-3 border-[#d4af37] rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#d4af37] transition shadow-md"
+                className="w-full bg-white border-3 border-[#FFD700] rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#FFD700] transition shadow-md"
                 required
               />
             </div>
@@ -171,7 +171,7 @@ export default function AuthForm({ type }: AuthFormProps) {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="รหัสผ่าน"
-                className="w-full bg-white border-3 border-[#d4af37] rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#d4af37] transition shadow-md"
+                className="w-full bg-white border-3 border-[#FFD700] rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#FFD700] transition shadow-md"
                 required
               />
             </div>
@@ -191,7 +191,7 @@ export default function AuthForm({ type }: AuthFormProps) {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="รหัสผ่าน"
-              className="w-full bg-white border-3 border-[#d4af37] rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#d4af37] transition shadow-md"
+              className="w-full bg-white border-3 border-[#FFD700] rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#FFD700] transition shadow-md"
               required
             />
             <p className="text-xs text-gray-600 mt-1">
@@ -208,7 +208,7 @@ export default function AuthForm({ type }: AuthFormProps) {
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               placeholder="ยืนยันรหัสผ่าน"
-              className="w-full bg-white border-3 border-[#d4af37] rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#d4af37] transition shadow-md"
+              className="w-full bg-white border-3 border-[#FFD700] rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#FFD700] transition shadow-md"
               required
             />
           </div>
@@ -234,7 +234,7 @@ export default function AuthForm({ type }: AuthFormProps) {
           disabled={loading}
           className={`flex-1 ${
             loading ? 'opacity-50' : ''
-          } bg-gradient-to-b from-[#5a9f8f] to-[#2d5f4f] hover:from-[#4a8f7f] hover:to-[#1d4f3f] text-white font-bold py-3 px-6 rounded-lg transition shadow-lg`}
+          } bg-gradient-to-b from-[#DAA520] to-[#8B7500] hover:from-[#4a8f7f] hover:to-[#1d4f3f] text-white font-bold py-3 px-6 rounded-lg transition shadow-lg`}
         >
           {loading
             ? 'กำลังดำเนิน...'
@@ -252,14 +252,14 @@ export default function AuthForm({ type }: AuthFormProps) {
           {isRegister ? (
             <>
               มีบัญชีอยู่แล้ว?{' '}
-              <a href="/login" className="text-[#2d5f4f] hover:underline font-bold">
+              <a href="/login" className="text-[#8B7500] hover:underline font-bold">
                 เข้าสู่ระบบ
               </a>
             </>
           ) : (
             <>
               ยังไม่มีบัญชี?{' '}
-              <a href="/register" className="text-[#2d5f4f] hover:underline font-bold">
+              <a href="/register" className="text-[#8B7500] hover:underline font-bold">
                 สมัครสมาชิก
               </a>
             </>

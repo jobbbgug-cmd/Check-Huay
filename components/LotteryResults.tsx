@@ -142,7 +142,7 @@ export default function LotteryResults({ page = 1 }: LotteryResultsProps) {
           <button
             onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
             disabled={currentPage === 1}
-            className="px-5 py-3 bg-gradient-to-b from-[#d4af37] to-[#b8941f] hover:from-[#e8c547] hover:to-[#c4b82e] disabled:from-gray-400 disabled:to-gray-500 text-[#2d5f4f] disabled:text-gray-600 font-bold rounded-lg transition shadow-md"
+            className="px-5 py-3 bg-gradient-to-b from-[#FFD700] to-[#b8941f] hover:from-[#e8c547] hover:to-[#c4b82e] disabled:from-gray-400 disabled:to-gray-500 text-[#8B7500] disabled:text-gray-600 font-bold rounded-lg transition shadow-md"
           >
             ← ก่อนหน้า
           </button>
@@ -152,7 +152,7 @@ export default function LotteryResults({ page = 1 }: LotteryResultsProps) {
           <button
             onClick={() => setCurrentPage(Math.min(totalPages, currentPage + 1))}
             disabled={currentPage === totalPages}
-            className="px-5 py-3 bg-gradient-to-b from-[#d4af37] to-[#b8941f] hover:from-[#e8c547] hover:to-[#c4b82e] disabled:from-gray-400 disabled:to-gray-500 text-[#2d5f4f] disabled:text-gray-600 font-bold rounded-lg transition shadow-md"
+            className="px-5 py-3 bg-gradient-to-b from-[#FFD700] to-[#b8941f] hover:from-[#e8c547] hover:to-[#c4b82e] disabled:from-gray-400 disabled:to-gray-500 text-[#8B7500] disabled:text-gray-600 font-bold rounded-lg transition shadow-md"
           >
             ถัดไป →
           </button>

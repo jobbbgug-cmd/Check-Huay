@@ -61,12 +61,12 @@ export default function LotterySearch() {
                 value={ticket}
                 onChange={(e) => setTicket(e.target.value.toUpperCase())}
                 placeholder="เช่น 123456"
-                className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#5a9f8f] focus:ring-2 focus:ring-[#5a9f8f] font-mono text-lg transition"
+                className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#DAA520] focus:ring-2 focus:ring-[#DAA520] font-mono text-lg transition"
               />
               <button
                 type="submit"
                 disabled={loading}
-                className={`px-6 py-3 bg-gradient-to-b from-[#d4af37] to-[#b8941f] hover:from-[#e8c547] hover:to-[#c4b82e] disabled:from-gray-400 disabled:to-gray-500 text-[#2d5f4f] disabled:text-gray-600 font-bold rounded-lg transition shadow-lg ${
+                className={`px-6 py-3 bg-gradient-to-b from-[#FFD700] to-[#b8941f] hover:from-[#e8c547] hover:to-[#c4b82e] disabled:from-gray-400 disabled:to-gray-500 text-[#8B7500] disabled:text-gray-600 font-bold rounded-lg transition shadow-lg ${
                   loading ? 'opacity-50' : ''
                 }`}
               >

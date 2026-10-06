@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --color-primary-dark: #2d5f4f;
-  --color-primary-light: #5a9f8f;
-  --color-accent: #d4af37;
-  --color-accent-light: #e8d5a8;
-  --color-background: #f5f1e8;
-  --color-text: #2d5f4f;
+  --color-primary-dark: #8B7500;
+  --color-primary-light: #DAA520;
+  --color-accent: #FFD700;
+  --color-accent-light: #FFF8DC;
+  --color-background: #FFF8DC;
+  --color-text: #654321;
 }
 
 @theme inline {
@@ -22,19 +22,19 @@ body {
 
 /* Thai-style design tokens */
 .btn-primary {
-  @apply bg-gradient-to-b from-[#5a9f8f] to-[#2d5f4f] text-white font-bold py-3 px-6 rounded-lg hover:from-[#4a8f7f] hover:to-[#1d4f3f] transition duration-300 shadow-lg;
+  @apply bg-gradient-to-b from-[#FFD700] to-[#DAA520] text-[#654321] font-bold py-3 px-6 rounded-lg hover:from-[#FFED4E] hover:to-[#F0C000] transition duration-300 shadow-lg;
 }
 
 .btn-secondary {
-  @apply bg-gradient-to-b from-[#d4af37] to-[#b8941f] text-[#2d5f4f] font-bold py-3 px-6 rounded-lg hover:from-[#e8c547] hover:to-[#c4b82e] transition duration-300 shadow-md;
+  @apply bg-gradient-to-b from-[#DAA520] to-[#8B7500] text-white font-bold py-3 px-6 rounded-lg hover:from-[#FFD700] hover:to-[#A68C20] transition duration-300 shadow-md;
 }
 
 .card-gold {
-  @apply bg-white border-4 border-[#d4af37] rounded-xl p-6 shadow-xl;
+  @apply bg-white border-4 border-[#FFD700] rounded-xl p-6 shadow-xl;
 }
 
 .card-green {
-  @apply bg-gradient-to-b from-[#5a9f8f] to-[#2d5f4f] rounded-2xl p-6 text-white shadow-xl;
+  @apply bg-gradient-to-b from-[#DAA520] to-[#8B7500] rounded-2xl p-6 text-white shadow-xl;
 }
 
 .input-field {

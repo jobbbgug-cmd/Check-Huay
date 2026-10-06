@@ -14,15 +14,15 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#2d5f4f] to-[#1a3a2e]">
+    <div className="min-h-screen bg-gradient-to-br from-[#8B7500] to-[#654321]">
       {/* Navigation */}
-      <nav className="bg-gradient-to-r from-[#1a3a2e] to-[#0d2520] shadow-2xl sticky top-0 z-50">
+      <nav className="bg-gradient-to-r from-[#654321] to-[#3E2723] shadow-2xl sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
           <h1 className="text-white text-3xl font-bold">🎰 ตรวจหวย</h1>
           <div className="space-x-4">
             {isLoggedIn ? (
               <>
-                <Link href="/dashboard" className="text-[#d4af37] hover:text-white font-bold transition">
+                <Link href="/dashboard" className="text-[#FFD700] hover:text-white font-bold transition">
                   แดชบอร์ด
                 </Link>
                 <button
@@ -38,12 +38,12 @@ export default function Home() {
               </>
             ) : (
               <>
-                <Link href="/login" className="text-[#d4af37] hover:text-white font-bold transition">
+                <Link href="/login" className="text-[#FFD700] hover:text-white font-bold transition">
                   เข้าสู่ระบบ
                 </Link>
                 <Link
                   href="/register"
-                  className="bg-gradient-to-b from-[#d4af37] to-[#b8941f] hover:from-[#e8c547] hover:to-[#c4b82e] text-[#2d5f4f] px-4 py-2 rounded-lg font-bold transition shadow-lg"
+                  className="bg-gradient-to-b from-[#FFD700] to-[#DAA520] hover:from-[#FFED4E] hover:to-[#F0C000] text-[#654321] px-4 py-2 rounded-lg font-bold transition shadow-lg"
                 >
                   สมัครสมาชิก
                 </Link>
@@ -59,7 +59,7 @@ export default function Home() {
           <h2 className="text-6xl font-bold mb-6">
             🎰 ตรวจผลหวยออนไลน์
           </h2>
-          <p className="text-2xl opacity-90 mb-8 text-[#d4af37]">
+          <p className="text-2xl opacity-90 mb-8 text-[#FFD700]">
             ค้นหาและตรวจสอบสลากหวยของคุณกับผลการจับรางวัลในอดีต
           </p>
         </div>
@@ -67,7 +67,7 @@ export default function Home() {
         {isLoggedIn ? (
           <Link
             href="/dashboard"
-            className="inline-block bg-gradient-to-b from-[#d4af37] to-[#b8941f] hover:from-[#e8c547] hover:to-[#c4b82e] text-[#2d5f4f] font-bold py-4 px-10 rounded-xl text-xl transition shadow-2xl"
+            className="inline-block bg-gradient-to-b from-[#FFD700] to-[#DAA520] hover:from-[#FFED4E] hover:to-[#F0C000] text-[#654321] font-bold py-4 px-10 rounded-xl text-xl transition shadow-2xl"
           >
             ไปยังแดชบอร์ด →
           </Link>
@@ -75,13 +75,13 @@ export default function Home() {
           <div className="space-x-4">
             <Link
               href="/register"
-              className="inline-block bg-gradient-to-b from-[#d4af37] to-[#b8941f] hover:from-[#e8c547] hover:to-[#c4b82e] text-[#2d5f4f] font-bold py-4 px-10 rounded-xl text-lg transition shadow-2xl"
+              className="inline-block bg-gradient-to-b from-[#FFD700] to-[#DAA520] hover:from-[#FFED4E] hover:to-[#F0C000] text-[#654321] font-bold py-4 px-10 rounded-xl text-lg transition shadow-2xl"
             >
               เริ่มต้นใช้งาน
             </Link>
             <Link
               href="/login"
-              className="inline-block bg-gradient-to-b from-[#5a9f8f] to-[#2d5f4f] hover:from-[#4a8f7f] hover:to-[#1d4f3f] text-white font-bold py-4 px-10 rounded-xl text-lg transition shadow-2xl border-2 border-[#d4af37]"
+              className="inline-block bg-gradient-to-b from-[#DAA520] to-[#8B7500] hover:from-[#FFD700] hover:to-[#A68C20] text-white font-bold py-4 px-10 rounded-xl text-lg transition shadow-2xl border-2 border-[#FFD700]"
             >
               เข้าสู่ระบบ
             </Link>
@@ -92,13 +92,13 @@ export default function Home() {
       {/* Features */}
       <div className="bg-white bg-opacity-95 py-20 mt-20">
         <div className="max-w-6xl mx-auto px-4">
-          <h3 className="text-4xl font-bold text-center mb-16 text-[#2d5f4f]">
+          <h3 className="text-4xl font-bold text-center mb-16 text-[#8B7500]">
             ✨ ฟีเจอร์ของเรา
           </h3>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-8 bg-gradient-to-br from-[#f5f1e8] to-white rounded-2xl border-4 border-[#d4af37] shadow-lg hover:shadow-2xl transition">
+            <div className="p-8 bg-gradient-to-br from-[#FFF8DC] to-white rounded-2xl border-4 border-[#FFD700] shadow-lg hover:shadow-2xl transition">
               <div className="text-5xl mb-4">🔍</div>
-              <h4 className="text-2xl font-bold text-[#2d5f4f] mb-3">
+              <h4 className="text-2xl font-bold text-[#8B7500] mb-3">
                 ค้นหาสลากทันใจ
               </h4>
               <p className="text-gray-700">
@@ -107,7 +107,7 @@ export default function Home() {
             </div>
             <div className="p-8 bg-gradient-to-br from-[#f5f1e8] to-white rounded-2xl border-4 border-[#d4af37] shadow-lg hover:shadow-2xl transition">
               <div className="text-5xl mb-4">📊</div>
-              <h4 className="text-2xl font-bold text-[#2d5f4f] mb-3">
+              <h4 className="text-2xl font-bold text-[#8B7500] mb-3">
                 ดูผลการจับรางวัล
               </h4>
               <p className="text-gray-700">
@@ -116,7 +116,7 @@ export default function Home() {
             </div>
             <div className="p-8 bg-gradient-to-br from-[#f5f1e8] to-white rounded-2xl border-4 border-[#d4af37] shadow-lg hover:shadow-2xl transition">
               <div className="text-5xl mb-4">🔒</div>
-              <h4 className="text-2xl font-bold text-[#2d5f4f] mb-3">
+              <h4 className="text-2xl font-bold text-[#8B7500] mb-3">
                 ปลอดภัยและเป็นส่วนตัว
               </h4>
               <p className="text-gray-700">
@@ -128,7 +128,7 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-r from-[#1a3a2e] to-[#0d2520] text-white text-center py-8 mt-8">
+      <footer className="bg-gradient-to-r from-[#654321] to-[#3E2723] text-white text-center py-8 mt-8">
         <p className="text-gray-300">&copy; 2026 ตรวจหวยออนไลน์ สงวนลิขสิทธิ์</p>
         <p className="text-gray-400 text-sm mt-2">ทำด้วย ❤️ สำหรับคนรักการตรวจหวย</p>
       </footer>
