@@ -32,21 +32,21 @@ const categories: Category[] = [
 
 export default function MenuCategories() {
   return (
-    <div className="w-full bg-gradient-to-r from-[#8B7500] to-[#654321] py-4 px-4 border-b-2 border-[#FFD700]">
+    <div className="w-full bg-gradient-to-r from-[#8B7500] to-[#654321] py-4 px-4 border-4 border-red-600">
       <div className="max-w-6xl mx-auto">
-        {/* Horizontal scrollable menu */}
-        <div className="flex gap-3 overflow-x-auto pb-2 scroll-smooth">
+        {/* Horizontal menu - Full width with equal spacing */}
+        <div className="grid grid-cols-3 gap-3">
           {categories.map((category) => (
             <Link
               key={category.id}
               href={category.href}
-              className="flex-shrink-0"
+              className="w-full"
             >
-              <div className="bg-white rounded-xl p-4 shadow-lg hover:shadow-2xl transition transform hover:scale-105 cursor-pointer border-3 border-[#FFD700] min-w-fit">
-                <div className="text-3xl mb-2 text-center">
+              <div className="bg-white rounded-xl p-4 shadow-lg hover:shadow-2xl transition transform hover:scale-105 cursor-pointer border-3 border-[#FFD700] w-full">
+                <div className="text-4xl mb-2 text-center">
                   {category.icon}
                 </div>
-                <h3 className="text-center font-bold text-[#654321] text-sm whitespace-nowrap">
+                <h3 className="text-center font-bold text-[#654321] text-sm">
                   {category.name}
                 </h3>
               </div>
