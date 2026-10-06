@@ -54,44 +54,28 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <div className="max-w-6xl mx-auto px-4 py-20 text-center">
-        <div className="text-white mb-12">
-          <h2 className="text-6xl font-bold mb-6">
-            🎰 ตรวจผลหวยออนไลน์
-          </h2>
-          <p className="text-2xl opacity-90 mb-8 text-[#FFD700]">
-            ค้นหาและตรวจสอบสลากหวยของคุณกับผลการจับรางวัลในอดีต
-          </p>
-        </div>
+      {/* Menu Categories Modal - Show for non-logged users */}
+      {!isLoggedIn && <MenuCategories />}
 
-        {isLoggedIn ? (
+      {/* Hero Section - Show for logged-in users */}
+      {isLoggedIn && (
+        <div className="max-w-6xl mx-auto px-4 py-20 text-center">
+          <div className="text-white mb-12">
+            <h2 className="text-6xl font-bold mb-6">
+              🎰 ตรวจผลหวยออนไลน์
+            </h2>
+            <p className="text-2xl opacity-90 mb-8 text-[#FFD700]">
+              ค้นหาและตรวจสอบสลากหวยของคุณกับผลการจับรางวัลในอดีต
+            </p>
+          </div>
           <Link
             href="/dashboard"
             className="inline-block bg-gradient-to-b from-[#FFD700] to-[#DAA520] hover:from-[#FFED4E] hover:to-[#F0C000] text-[#654321] font-bold py-4 px-10 rounded-xl text-xl transition shadow-2xl"
           >
             ไปยังแดชบอร์ด →
           </Link>
-        ) : (
-          <div className="space-x-4">
-            <Link
-              href="/register"
-              className="inline-block bg-gradient-to-b from-[#FFD700] to-[#DAA520] hover:from-[#FFED4E] hover:to-[#F0C000] text-[#654321] font-bold py-4 px-10 rounded-xl text-lg transition shadow-2xl"
-            >
-              เริ่มต้นใช้งาน
-            </Link>
-            <Link
-              href="/login"
-              className="inline-block bg-gradient-to-b from-[#DAA520] to-[#8B7500] hover:from-[#FFD700] hover:to-[#A68C20] text-white font-bold py-4 px-10 rounded-xl text-lg transition shadow-2xl border-2 border-[#FFD700]"
-            >
-              เข้าสู่ระบบ
-            </Link>
-          </div>
-        )}
-      </div>
-
-      {/* Menu Categories */}
-      <MenuCategories />
+        </div>
+      )}
 
       {/* Features */}
       <div className="bg-white bg-opacity-95 py-20 mt-20">

@@ -1,10 +1,11 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
+
 interface Category {
   id: string;
   name: string;
   icon: string;
-  color: string;
   href: string;
 }
 
@@ -13,68 +14,96 @@ const categories: Category[] = [
     id: 'home',
     name: 'หน้าแรก',
     icon: '🏠',
-    color: 'from-red-400 to-red-600',
     href: '/',
   },
   {
     id: 'income',
     name: 'สร้างรายได้',
     icon: '💰',
-    color: 'from-green-400 to-green-600',
     href: '/income',
   },
   {
     id: 'lottery',
     name: 'หวย',
     icon: '🎰',
-    color: 'from-yellow-400 to-yellow-600',
     href: '/lottery',
   },
   {
     id: 'sports',
     name: 'หวยยุด',
     icon: '⚽',
-    color: 'from-blue-400 to-blue-600',
     href: '/sports',
   },
   {
     id: 'casino',
     name: 'คาสิโน',
     icon: '🎲',
-    color: 'from-purple-400 to-purple-600',
     href: '/casino',
   },
 ];
 
 export default function MenuCategories() {
+  const router = useRouter();
+
   return (
-    <div className="w-full bg-gradient-to-r from-[#8B7500] to-[#654321] py-8 px-4">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-40 p-4">
+      <div className="relative w-full max-w-sm bg-gradient-to-b from-[#C9A961] to-[#A67C52] rounded-3xl shadow-2xl p-8 border-8 border-red-600">
+        {/* Close Button */}
+        <button
+          onClick={() => router.back()}
+          className="absolute top-4 right-4 text-white text-2xl w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/20 transition font-bold"
+        >
+          ×
+        </button>
+
+        {/* Header */}
+        <div className="text-center mb-6">
+          <div className="text-4xl mb-2">🎰</div>
+          <h2 className="text-3xl font-bold text-white mb-2">ตรวจผลหวย</h2>
+          <p className="text-sm text-white/90">ออนไลน์</p>
+        </div>
+
+        {/* Description */}
+        <div className="text-center mb-8 bg-yellow-700 rounded-2xl p-4">
+          <p className="text-white font-bold text-sm">
+            ค้นหาและตรวจสอบสลากหวยของคุณกับผลการจับรางวัลในอดีต
+          </p>
+        </div>
+
+        {/* Action Buttons */}
+        <div className="flex gap-3 mb-8">
+          <button
+            className="flex-1 bg-yellow-400 hover:bg-yellow-300 text-[#654321] font-bold py-3 px-4 rounded-lg transition shadow-md"
+            onClick={() => router.push('/register')}
+          >
+            เริ่มต้นใช้งาน
+          </button>
+          <button
+            className="flex-1 bg-transparent hover:bg-white/10 border-2 border-yellow-400 text-white font-bold py-3 px-4 rounded-lg transition"
+            onClick={() => router.push('/login')}
+          >
+            เข้าสู่ระบบ
+          </button>
+        </div>
+
+        {/* Categories Grid */}
+        <div className="grid grid-cols-2 gap-4">
           {categories.map((category) => (
             <a
               key={category.id}
               href={category.href}
               className="group relative"
             >
-              <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition transform hover:scale-105 cursor-pointer border-4 border-[#FFD700]">
-                <div className={`text-5xl mb-3 text-center`}>
+              <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition transform hover:scale-105 cursor-pointer border-4 border-yellow-500">
+                <div className="text-4xl mb-2 text-center">
                   {category.icon}
                 </div>
-                <h3 className="text-center font-bold text-[#654321] text-sm sm:text-base">
+                <h3 className="text-center font-bold text-[#654321] text-xs sm:text-sm">
                   {category.name}
                 </h3>
               </div>
             </a>
           ))}
-        </div>
-
-        {/* Promotional banner */}
-        <div className="mt-8 bg-gradient-to-r from-[#FFD700] to-[#FFA500] rounded-2xl p-6 border-4 border-red-600 shadow-2xl">
-          <div className="text-center text-white font-bold">
-            <p className="text-lg sm:text-2xl mb-2">100% ทันใจอ่านครั้งแรก!</p>
-            <p className="text-sm sm:text-base">แจกเครดิตฟรีทุกวัน สำหรับสมาชิก</p>
-          </div>
         </div>
       </div>
     </div>
