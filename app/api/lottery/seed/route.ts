@@ -46,11 +46,12 @@ export async function POST(req: NextRequest) {
 
     // Insert sample data
     const result = await lotteryCollection.insertMany(sampleLotteryData);
+    const insertedCount = Object.keys(result.insertedIds).length;
 
     return NextResponse.json(
       {
         message: 'Lottery data seeded successfully',
-        insertedCount: result.insertedIds.length,
+        insertedCount,
       },
       { status: 201 }
     );
